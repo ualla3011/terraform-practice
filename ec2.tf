@@ -29,7 +29,7 @@ resource "aws_instance" "app" {
 
 resource "aws_instance" "tools" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.medium"
+  instance_type = "t2.medium"
   subnet_id     = aws_subnet.public2.id
   vpc_security_group_ids = [aws_security_group.PublicSG.id]
   key_name = aws_key_pair.kp.key_name
